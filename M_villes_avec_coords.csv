@@ -1,0 +1,75 @@
+Ville,Architecture,Terrain,Distance_côte,Climat,Eau_proche,Montagne,Taille,Points_intérêt,Grande_ville_proche,lat,lng
+Oulad Barhil,Traditionnelle,Montagne,120,Aride,Oued Souss,Anti-Atlas,Petite,"Marché local, Mosquée",Agadir,30.6408,-8.475
+Biougra,Traditionnelle,Plaine,30,Aride,Oued Souss,Anti-Atlas,Petite,"Marché hebdomadaire, Mosquée",Agadir,30.2144,-9.3708
+Inezgane,Moderne,Plaine,10,Aride,Oued Souss,Anti-Atlas,Moyenne,"Souk El Had, Zone commerciale",Agadir,30.3658,-9.5381
+Ait Melloul,Moderne,Plaine,15,Aride,Oued Souss,Anti-Atlas,Moyenne,"Zone industrielle, Mosquée",Agadir,30.3342,-9.4972
+My Drarga,Moderne,Plaine,8,Aride,Oued Souss,Anti-Atlas,Petite,"Zone résidentielle, Mosquée",Agadir,30.38,-9.48
+Agadir,Moderne,Côtier,0,Méditerranéen,Océan Atlantique,Anti-Atlas,Grande,"Marina, Kasbah, Plages",Agadir,30.4333,-9.6
+Temsia,Traditionnelle,Plaine,20,Aride,Oued Souss,Anti-Atlas,Petite,"Marché local, Mosquée",Agadir,30.36,-9.414
+Oulad Teïma,Traditionnelle,Plaine,40,Aride,Oued Souss,Anti-Atlas,Petite,"Marché agricole, Mosquée",Agadir,30.4,-9.2167
+Chichaoua,Traditionnelle,Plaine,90,Aride,Oued Chichaoua,Haut Atlas,Petite,"Marché rural, Kasbah",Marrakech,31.5333,-8.7667
+Tameslouht,Traditionnelle,Plaine,30,Aride,Oued Tensift,Haut Atlas,Petite,"Zaouia, Jardins",Marrakech,31.5,-8.1
+Ait Ourir,Traditionnelle,Montagne,60,Aride,Oued Zat,Haut Atlas,Petite,"Souk hebdomadaire, Kasbahs",Marrakech,31.5644,-7.6628
+Marrakech,Traditionnelle,Plaine,150,Aride,Oued Tensift,Haut Atlas,Grande,"Médina, Jamaa El Fna, Jardins Majorelle",Marrakech,31.63,-8.0089
+Demnat,Traditionnelle,Montagne,150,Aride,Oued El Abid,Atlas,Petite,"Pont naturel d'Imi n'Ifri, Kasbahs",Béni Mellal,31.7311,-7.0361
+Errachidia,Traditionnelle,Désertique,300,Aride,Oued Ziz,Atlas,Petite,"Palmeraie, Kasbahs",Midelt,31.9319,-4.4244
+Arfoud,Traditionnelle,Désertique,350,Aride,Oued Ziz,Atlas,Petite,"Fossiles, Dunes de Merzouga",Errachidia,31.4361,-4.2328
+Aziylal,Traditionnelle,Montagne,180,Aride,Oued El Abid,Haut Atlas,Petite,"Cascades d'Ouzoud, Kasbahs",Béni Mellal,31.9669,-6.5694
+Al Attawia,Traditionnelle,Plaine,180,Aride,Oued Lakhdar,Atlas,Petite,"Marché local, Mosquée",Marrakech,31.8347,-7.3125
+Youssoufia,Moderne,Plaine,100,Aride,Oued Oum Er-Rbia,Atlas,Petite,"Mines de phosphate, Mosquée",Safi,32.25,-8.5333
+Safi,Traditionnelle,Côtier,0,Méditerranéen,Océan Atlantique,Atlas,Grande,"Port, Céramique, Médina",Safi,32.2833,-9.2333
+Ben Guerir,Moderne,Plaine,120,Aride,Oued Tensift,Atlas,Moyenne,"Université Mohammed VI, Mines",Marrakech,32.23,-7.95
+Sidi Smai'il,Traditionnelle,Plaine,80,Aride,Oued Oum Er-Rbia,Atlas,Petite,"Marché local, Mosquée",El Jadida,32.8167,-8.5
+Béni Mellal,Moderne,Montagne,150,Aride,Oued El Abid,Atlas,Grande,"Kasbah Bel-Kush, Université",Béni Mellal,32.3394,-6.3608
+Midalt,Traditionnelle,Montagne,250,Aride,Oued Moulouya,Moyen Atlas,Petite,"Kasbahs, Mines",Errachidia,32.68,-4.73
+Settat,Moderne,Plaine,70,Aride,Oued Oum Er-Rbia,Atlas,Moyenne,"Université Hassan I, Mosquée",Casablanca,33.0,-7.6167
+El Jadid,Traditionnelle,Côtier,0,Méditerranéen,Océan Atlantique,Atlas,Grande,"Cité portugaise, Plages",El Jadida,33.2333,-8.5
+Moulay Abdallah,Traditionnelle,Côtier,0,Méditerranéen,Océan Atlantique,Atlas,Petite,"Moussem, Plages",El Jadida,33.1978,-8.5883
+Barrechid,Moderne,Plaine,30,Aride,Oued Oum Er-Rbia,Atlas,Moyenne,"Zone industrielle, Mosquée",Casablanca,33.2667,-7.5833
+Bouskoura,Moderne,Plaine,20,Aride,Oued Oum Er-Rbia,Atlas,Moyenne,"Forêt de Bouskoura, Zone industrielle",Casablanca,33.4489,-7.6486
+Bir Jdid,Traditionnelle,Plaine,10,Aride,Oued Oum Er-Rbia,Atlas,Petite,"Marché local, Mosquée",El Jadida,33.3737,-8.0002
+Ad Darwa,Traditionnelle,Plaine,25,Aride,Oued Oum Er-Rbia,Atlas,Petite,"Marché local, Mosquée",Casablanca,33.4167,-7.5333
+Casablanca,Moderne,Côtier,0,Méditerranéen,Océan Atlantique,Atlas,Grande,"Mosquée Hassan II, Corniche",Casablanca,33.5333,-7.5833
+Tit Mellil,Moderne,Plaine,15,Aride,Oued Oum Er-Rbia,Atlas,Petite,"Zone industrielle, Mosquée",Casablanca,33.5533,-7.4822
+Aïn Harrouda,Moderne,Plaine,10,Aride,Oued Oum Er-Rbia,Atlas,Petite,"Zone industrielle, Mosquée",Casablanca,33.6372,-7.4483
+Mohammedia,Moderne,Côtier,0,Méditerranéen,Océan Atlantique,Atlas,Moyenne,"Port, Plages",Casablanca,33.6833,-7.3833
+Beni Yakhlef,Traditionnelle,Plaine,20,Aride,Oued Oum Er-Rbia,Atlas,Petite,"Marché local, Mosquée",Mohammedia,33.6555,-7.3221
+Al Khmissat,Traditionnelle,Plaine,60,Aride,Oued Sebou,Atlas,Petite,"Marché local, Mosquée",Rabat,33.8167,-6.0667
+Sefrou,Traditionnelle,Montagne,150,Aride,Oued Aggaï,Moyen Atlas,Petite,"Cascade de Sefrou, Médina",Fès,33.83,-4.83
+Oued Zem,Traditionnelle,Plaine,100,Aride,Oued Oum Er-Rbia,Atlas,Moyenne,"Marché local, Mosquée",Khouribga,32.8667,-6.5667
+Azrou,Traditionnelle,Montagne,200,Aride,Oued Tizguit,Moyen Atlas,Petite,"Forêt de cèdres, Médina",Ifrane,33.4417,-5.2247
+El Hajeb,Traditionnelle,Montagne,180,Aride,Oued Boufekrane,Moyen Atlas,Petite,"Kasbahs, Marché local",Meknès,33.6928,-5.3711
+Sidi Yahya Zaer,Traditionnelle,Plaine,20,Aride,Oued Bouregreg,Atlas,Petite,"Marché local, Mosquée",Rabat,33.7105,-6.8831
+Mrirt,Traditionnelle,Montagne,220,Aride,Oued Oum Er-Rbia,Moyen Atlas,Petite,"Marché local, Mosquée",Khenifra,33.1667,-5.5667
+Skhirate,Moderne,Côtier,0,Méditerranéen,Océan Atlantique,Atlas,Petite,"Plages, Palais royal",Rabat,33.85,-7.03
+Ain El Aouda,Moderne,Plaine,30,Aride,Oued Bouregreg,Atlas,Petite,"Zone résidentielle, Mosquée",Rabat,33.8111,-6.7922
+Sale,Traditionnelle,Côtier,0,Méditerranéen,Océan Atlantique,Atlas,Grande,"Médina, Mosquées",Rabat,34.0333,-6.8
+Temara,Moderne,Côtier,0,Méditerranéen,Océan Atlantique,Atlas,Moyenne,"Plages, Zones résidentielles",Rabat,33.9267,-6.9122
+Rabat,Moderne,Côtier,0,Méditerranéen,Océan Atlantique,Atlas,Grande,"Tour Hassan, Kasbah des Oudayas",Rabat,34.0209,-6.8416
+Bouknadel,Moderne,Côtier,0,Méditerranéen,Océan Atlantique,Atlas,Petite,"Jardin exotique, Plages",Rabat,34.1333,-6.7333
+Mehdya,Traditionnelle,Côtier,0,Méditerranéen,Océan Atlantique,Atlas,Petite,"Plage, Fort portugais",Kenitra,34.2597,-6.65
+Kenitra,Moderne,Côtier,0,Méditerranéen,Océan Atlantique,Atlas,Grande,"Port, Université Ibn Tofail",Kenitra,34.25,-6.5833
+Meknès,Traditionnelle,Plaine,150,Aride,Oued Boufekrane,Moyen Atlas,Grande,"Médina, Bab Mansour",Meknès,33.895,-5.5547
+Aïn Taoujdat,Traditionnelle,Plaine,170,Aride,Oued Boufekrane,Moyen Atlas,Petite,"Marché local, Mosquée",Meknès,33.9333,-5.2167
+Oulad Tayeb,Traditionnelle,Plaine,160,Aride,Oued Boufekrane,Moyen Atlas,Petite,"Marché local, Mosquée",Fès,33.9598,-4.9954
+Fès,Traditionnelle,Plaine,180,Aride,Oued Fès,Moyen Atlas,Grande,"Médina, Université Al Quaraouiyine",Fès,34.0433,-5.0033
+Sidi Qacem,Traditionnelle,Plaine,200,Aride,Oued Sebou,Atlas,Moyenne,"Marché local, Mosquée",Kenitra,34.2167,-5.7
+Moulay Bousselham,Traditionnelle,Côtier,0,Méditerranéen,Lagune de Merja Zerga,Atlas,Petite,"Plage, Réserve naturelle",Kenitra,34.8786,-6.2933
+Souk et Tnine Jorf el Mellah,Traditionnelle,Plaine,50,Aride,Oued Mellah,Atlas,Petite,"Marché local, Mosquée",Casablanca,34.4833,-5.5169
+Taza,Traditionnelle,Montagne,250,Aride,Oued Inaouen,Moyen Atlas,Moyenne,"Gorges de Tazekka, Médina",Fès,34.2167,-4.0167
+Guercif,Traditionnelle,Plaine,300,Aride,Oued Moulouya,Atlas,Petite,"Marché local, Mosquée",Taza,34.2333,-3.3667
+Imzouren,Traditionnelle,Montagne,0,Méditerranéen,Méditerranée,Rif,Petite,"Plages, Mosquées",Al Hoceïma,35.15,-3.85
+Taourirt,Traditionnelle,Plaine,350,Aride,Oued Ziz,Atlas,Moyenne,"Kasbahs, Marché local",Oujda,34.4169,-2.885
+El Aïoun,Traditionnelle,Plaine,400,Aride,Oued Moulouya,Atlas,Petite,"Marché local, Mosquée",Oujda,34.5852,-2.5056
+Oujda-Angad,Moderne,Plaine,450,Aride,Oued Isly,Atlas,Grande,"Médina, Université Mohammed I",Oujda,34.6867,-1.9114
+Larache,Traditionnelle,Côtier,0,Méditerranéen,Océan Atlantique,Rif,Moyenne,"Port, Médina",Larache,35.1833,-6.15
+Tétouan,Traditionnelle,Côtier,0,Méditerranéen,Océan Atlantique,Rif,Grande,"Médina, Musée archéologique",Tétouan,35.5667,-5.3667
+Tangier,Moderne,Côtier,0,Méditerranéen,Océan Atlantique,Rif,Grande,"Cap Spartel, Médina",Tangier,35.7767,-5.8039
+Martil,Moderne,Côtier,0,Méditerranéen,Océan Atlantique,Rif,Petite,"Plages, Université Abdelmalek Essaâdi",Tétouan,35.6167,-5.2667
+M'diq,Moderne,Côtier,0,Méditerranéen,Océan Atlantique,Rif,Petite,"Port, Plages",Tétouan,35.6858,-5.3253
+Al Aaroui,Moderne,Plaine,20,Méditerranéen,Méditerranée,Rif,Petite,"Marché local, Mosquée",Nador,35.0029,-3.0311
+Al Hoceïma,Traditionnelle,Côtier,0,Méditerranéen,Océan Atlantique,Rif,Petite,"Plages de Quemado et Sfiha, Parc national d'Al Hoceïma",Nador,35.2472,-3.9322
+Berkane,Traditionnelle,Plaine,30,Méditerranéen,Oued Moulouya,Rif,Petite,"Marché local, Mosquée",Nador,34.9167,-2.3167
+Nador,Moderne,Côtier,0,Méditerranéen,Lac Marchica,Rif,Grande,"Port, Plages",Nador,35.1667,-2.9333
+Iheddadene,Traditionnelle,Plaine,10,Méditerranéen,Lac Marchica,Rif,Petite,"Quartier résidentiel, Mosquée",Nador,35.15,-2.9667
+Zeghanghane,Traditionnelle,Plaine,50,Aride,Oued Moulouya,Rif,Petite,"Marché local, Mosquée",Nador,35.15,-3.0
