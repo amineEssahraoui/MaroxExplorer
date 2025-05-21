@@ -45,7 +45,7 @@ MarocExplorer/
 ├── model/              # Modèle
 │   ├── modèle.pth      # Architecture du modèle
 │
-├── interface/          # Interface de visualisation ou démo
+├── interface/          # Interface de visualisation (test)
 │   
 ├── notebooks/          # Analyses exploratoires ou tests en notebooks
 │   └── MarocExplorer_Data.ipynb
