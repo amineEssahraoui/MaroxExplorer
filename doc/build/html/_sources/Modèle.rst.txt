@@ -628,7 +628,7 @@ Pour plus de détails sur la démarche et les calculs, consultez notre **noteboo
 .. note:: 
    En raison de la taille importante des données, nous avons créé un ensemble de données réduit contenant 200 images. Cela vous permet de tester les modèles vous-même, sans avoir à passer par toutes les étapes de préparation des données. Pour l’utiliser, suivez les étapes ci-dessous :
 
-   1. Téléchargez les données réduites depuis ce lien : https://drive.google.com/drive/folders/16s7_JoakN-84FbYH6WjBfOHoRJf_tqC5?usp=drive_link
+   1. Téléchargez les données réduites depuis ce lien : https://drive.google.com/drive/folders/16s7_JoakN-84FbYH6WjBfOHoRJf_tqC5?usp=drive_link (ou bien à l'aide de GitHub)
 
    2. Placez le fichier téléchargé dans votre Google Drive.
 
