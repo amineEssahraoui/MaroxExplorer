@@ -1,0 +1,17 @@
+/* Style simple pour les blocs d'indication */
+.admonition.indication {
+    background-color: #e6f9f3;
+    border: none;
+    border-radius: 4px;
+}
+
+.admonition.indication .admonition-title {
+    background-color: #01ffc0;
+    color: white;
+}
+
+.admonition.indication .admonition-title:before {
+    content: "\f05a";
+    font-family: "FontAwesome";
+    margin-right: 8px;
+}

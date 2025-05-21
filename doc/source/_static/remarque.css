@@ -1,0 +1,29 @@
+.admonition.remarque {
+    margin-top: 35px;
+    background-color: hsl(59, 100%, 90%); /* Fond légèrement teinté de rouge pour correspondre au titre */
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.admonition.remarque .admonition-title {
+    background-color: #a2ab00; /* Rouge vif comme montré dans l'image */
+    color: white;
+    padding: 10px 15px;
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.admonition.remarque .admonition-title:before {
+    content: "\f075"; /* Icône bulle de commentaire */
+    font-family: "FontAwesome";
+    margin-right: 8px;
+}
+
+.admonition.remarque > :not(.admonition-title) {
+    padding: 15px;
+}

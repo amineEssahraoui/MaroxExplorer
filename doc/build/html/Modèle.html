@@ -1,0 +1,824 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modèle &mdash; MarocExplorer CV documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/indication.css?v=e47f44fb" />
+      <link rel="stylesheet" type="text/css" href="_static/remarque.css?v=81094b0d" />
+      <link rel="stylesheet" type="text/css" href="_static/attention.css?v=9a7e21cd" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/attention.css?v=9a7e21cd" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=27b5f0dd"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Données" href="Donn%C3%A9es.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%C3%89quipe.html">Équipe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Donn%C3%A9es.html">Données</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Modèle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#architecture-du-modele">Architecture du modèle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#methodologie-experimentale">Méthodologie expérimentale</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pretraitement-des-donnees">Prétraitement des données</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#protocole-experimental">Protocole expérimental</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hyperparametres-communs">Hyperparamètres communs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemple-resnet50">Exemple (resnet50)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#comparaison-des-modeles">Comparaison des modèles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#selection-des-architectures-candidates">Sélection des architectures candidates</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#evaluation-des-performances">Évaluation des performances</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#criteres-d-evaluation">Critères d’évaluation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#procedure-d-evaluation">Procédure d’évaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#resultats-et-analyses">Résultats et analyses</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#benchmark-des-performances">Benchmark des performances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visualisation-des-performances">Visualisation des performances</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#analyse-des-courbes-d-apprentissage">Analyse des courbes d’apprentissage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recommandations">Recommandations</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MarocExplorer</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Modèle</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Modèle.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="modele">
+<h1>Modèle<a class="headerlink" href="#modele" title="Link to this heading"></a></h1>
+<p>L’objectif du projet <strong>MarocExplorer</strong> est de prédire les coordonnées géographiques (latitude et longitude) à partir des <strong>images marocaines</strong> et de leurs <strong>métadonnées associées</strong>.
+Ce problème n’est pas un simple problème de <strong>Computer Vision (CV)</strong> classique, mais plutôt un problème de <strong>régression</strong>, où les <strong>caractéristiques cachées des images</strong> et les <strong>métadonnées</strong> jouent un rôle central.</p>
+<section id="architecture-du-modele">
+<h2>Architecture du modèle<a class="headerlink" href="#architecture-du-modele" title="Link to this heading"></a></h2>
+<p>Notre approche repose sur l’idée d’utiliser un <strong>modèle préentraîné</strong> pour extraire les <strong>caractéristiques visuelles</strong> des images.
+Ensuite, nous ajoutons des <strong>couches supplémentaires</strong> afin d’intégrer également les <strong>données géographiques</strong> (villes, régions, etc.) et de <strong>transformer la tâche en un problème de régression</strong>, avec pour cibles les coordonnées <strong>latitude</strong> et <strong>longitude</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cet apprentissage est <strong>coûteux en ressources</strong>, notamment lorsque l’on utilise des modèles lourds comme <strong>ResNet50</strong> ou <strong>DenseNet121</strong>.
+Il est généralement préférable d’utiliser un <strong>taux d’apprentissage plus faible</strong> pour éviter de <strong>déstabiliser les poids préentraînés</strong>.</p>
+</div>
+<p><strong>Principales étapes de l’architecture :</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Input :</strong>
+- Les entrées du modèle sont les <strong>images marocaines</strong> accompagnées de <strong>métadonnées</strong> sur leur ville.</p></li>
+<li><p><strong>Extraction des caractéristiques :</strong></p>
+<ul class="simple">
+<li><p><strong>Modèle d’images :</strong> Utilise un modèle préentraîné (<strong>ResNet18</strong>, par exemple) pour extraire les <strong>caractéristiques visuelles</strong> de l’image.</p></li>
+<li><p><strong>Modèle de caractéristiques géographiques :</strong> Utilise un <strong>réseau de neurones multicouche (MLP)</strong> pour extraire les <strong>caractéristiques de la ville</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Fusion des caractéristiques :</strong>
+- Les caractéristiques extraites des images et des villes sont <strong>concatenées</strong> pour former un <strong>vecteur combiné</strong>.</p></li>
+<li><p><strong>Modèle de régression :</strong>
+- Ce modèle prend en entrée le <strong>vecteur fusionné</strong> et prédit les <strong>coordonnées GPS (latitude, longitude)</strong>.</p></li>
+</ol>
+<div class="architecture-container docutils container">
+<a class="reference internal image-reference" href="_images/modèle.drawio.png"><img alt="Architecture du modèle" class="align-center" src="_images/mod%C3%A8le.drawio.png" style="width: 85%;" />
+</a>
+</div>
+<style>
+.pipeline-container {
+    margin-bottom: 40px;
+}
+</style></section>
+<section id="methodologie-experimentale">
+<h2>Méthodologie expérimentale<a class="headerlink" href="#methodologie-experimentale" title="Link to this heading"></a></h2>
+<section id="pretraitement-des-donnees">
+<h3>Prétraitement des données<a class="headerlink" href="#pretraitement-des-donnees" title="Link to this heading"></a></h3>
+<p>Pour garantir l’<strong>uniformité</strong> entre les modèles, nous avons appliqué le même prétraitement aux données:</p>
+<ol class="arabic">
+<li><p>Conversion des images en <strong>tensors</strong> de taille spécifique selon chaque modèle.</p>
+<ul class="simple">
+<li><p><strong>ResNet50</strong>: taille d’images <strong>(3, 224, 224)</strong></p></li>
+<li><p><strong>ResNet18</strong>: taille d’images <strong>(3, 224, 224)</strong></p></li>
+<li><p><strong>EfficientB0</strong>: taille d’images <strong>(3, 224, 224)</strong></p></li>
+<li><p><strong>DenseNet121</strong>: taille d’images <strong>(3, 224, 224)</strong></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transformations d&#39;images</span>
+<span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">CenterCrop</span><span class="p">(</span><span class="mi">224</span><span class="p">),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">([</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">])</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</li>
+<li><dl>
+<dt>Préparation des <strong>données des villes</strong>, qui sont textuelles, en <strong>encodant les caractéristiques</strong> pour les rendre compatibles avec les modèles de régression.</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">city_features</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">city_features_path</span><span class="p">)</span>
+
+<span class="c1"># Encodage des caractéristiques catégorielles</span>
+<span class="n">categorical_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Architecture&#39;</span><span class="p">,</span> <span class="s1">&#39;Terrain&#39;</span><span class="p">,</span> <span class="s1">&#39;Climat&#39;</span><span class="p">,</span> <span class="s1">&#39;Eau_proche&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Montagne&#39;</span><span class="p">,</span> <span class="s1">&#39;Taille&#39;</span><span class="p">,</span> <span class="s1">&#39;Points_intérêt&#39;</span><span class="p">,</span> <span class="s1">&#39;Grande_ville_proche&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">categorical_cols</span><span class="p">:</span>
+    <span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+    <span class="n">city_features</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">city_features</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+
+<span class="c1"># Normalisation des caractéristiques numériques</span>
+<span class="n">numerical_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Distance_côte&#39;</span><span class="p">]</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">city_features</span><span class="p">[</span><span class="n">numerical_cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">city_features</span><span class="p">[</span><span class="n">numerical_cols</span><span class="p">])</span>
+
+<span class="c1"># Sélection des caractéristiques à utiliser</span>
+<span class="n">feature_cols</span> <span class="o">=</span> <span class="n">categorical_cols</span> <span class="o">+</span> <span class="n">numerical_cols</span>
+<span class="n">city_features</span> <span class="o">=</span> <span class="n">city_features</span><span class="p">[[</span><span class="s1">&#39;Ville&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">feature_cols</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;lng&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p>Normalisation des données pour <strong>améliorer la stabilité de l’apprentissage</strong>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>La <strong>normalisation des coordonnées géographiques</strong> est essentielle pour éviter les écarts trop importants lors de l’entraînement.</p>
+</div>
+</section>
+<section id="protocole-experimental">
+<h3>Protocole expérimental<a class="headerlink" href="#protocole-experimental" title="Link to this heading"></a></h3>
+<p>Pour garantir l’<strong>équité de la comparaison</strong> entre les modèles, nous avons appliqué les règles suivantes:</p>
+<ul class="simple">
+<li><p>Utilisation de la même <strong>partition des données</strong> pour tous les modèles (80% entraînement, 20% validation).</p></li>
+<li><p>Entraînement sur un nombre d’<strong>époques fixé</strong> (maximum 20) pour assurer la convergence.</p></li>
+<li><p>Calcul des métriques sur les <strong>données de validation</strong> à chaque époque pour observer l’évolution des performances.</p></li>
+<li><p>Sauvegarde du <strong>meilleur modèle</strong> selon (<strong>Median Distance Error</strong>).</p></li>
+<li><p>Utiliser les mêmes hyperparamètres pour tous les modèles</p></li>
+</ul>
+<section id="hyperparametres-communs">
+<h4>Hyperparamètres communs<a class="headerlink" href="#hyperparametres-communs" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Optimiseur</strong> : Adam</p></li>
+<li><p><strong>Taux d’apprentissage (learning rate)</strong> : 1e-4 (valeur faible pour éviter de <strong>déstabiliser les poids préentraînés</strong>)</p></li>
+<li><p><strong>Taille de batch (batch size)</strong> : 32</p></li>
+<li><p><strong>Nombre d’epochs</strong> : 15 (le calcul est très coûteux)</p></li>
+<li><p><strong>Fonction de perte</strong> : MSE (Mean Squared Error)</p></li>
+<li><p><strong>Dimensions cachées pour les caractéristiques de ville</strong> :</p>
+<ul>
+<li><p><strong>city_hidden_dim1</strong> : 128</p></li>
+<li><p><strong>city_hidden_dim2</strong> : 74</p></li>
+</ul>
+</li>
+<li><p><strong>Dropout pour le sous-réseau de ville</strong> :</p>
+<ul>
+<li><p><strong>Après city_hidden_dim1</strong> : 0.3</p></li>
+</ul>
+</li>
+<li><p><strong>Dimensions pour la régression combinée</strong> :</p>
+<ul>
+<li><p><strong>Regression dim1</strong> : 512</p></li>
+<li><p><strong>Regression dim2</strong> : 128</p></li>
+</ul>
+</li>
+<li><p><strong>Dropout pour la régression combinée</strong> :</p>
+<ul>
+<li><p><strong>Après Regression dim1</strong> : 0.3</p></li>
+<li><p><strong>Après Regression dim2</strong> : 0.2</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="exemple-resnet50">
+<h4>Exemple (resnet50)<a class="headerlink" href="#exemple-resnet50" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ResNet50GPSModel</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_city_features</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ResNet50GPSModel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="c1"># ResNet50 comme extracteur de caractéristiques</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resnet</span> <span class="o">=</span> <span class="n">timm</span><span class="o">.</span><span class="n">create_model</span><span class="p">(</span><span class="s1">&#39;resnet50&#39;</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># Gel des premières couches pour un entraînement plus rapide et prévenir le surapprentissage</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">resnet</span><span class="o">.</span><span class="n">named_parameters</span><span class="p">():</span>
+            <span class="k">if</span> <span class="s1">&#39;layer4&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">name</span> <span class="ow">and</span> <span class="s1">&#39;fc&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+                <span class="n">param</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Nombre de caractéristiques de sortie du ResNet50</span>
+        <span class="n">resnet_features</span> <span class="o">=</span> <span class="mi">2048</span>  <span class="c1"># ResNet50 a 2048 caractéristiques de sortie</span>
+
+        <span class="c1"># Traitement des caractéristiques de ville</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">city_features_processor</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">num_city_features</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.3</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">74</span><span class="p">),</span>  <span class="c1"># 74 villes comme demandé</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">combined_features</span> <span class="o">=</span> <span class="n">resnet_features</span> <span class="o">+</span> <span class="mi">74</span>  <span class="c1"># 2048 (image) + 74 (ville)</span>
+
+        <span class="c1"># Régression combinée</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">regression</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">combined_features</span><span class="p">,</span> <span class="mi">512</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.3</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Sortie: [latitude, longitude]</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">city_features</span><span class="p">):</span>
+        <span class="c1"># Traitement de l&#39;image</span>
+        <span class="n">image_feats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resnet</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+        <span class="c1"># Traitement des caractéristiques de ville</span>
+        <span class="n">city_feats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">city_features_processor</span><span class="p">(</span><span class="n">city_features</span><span class="p">)</span>
+
+        <span class="c1"># Combinaison des caractéristiques</span>
+        <span class="n">combined</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="n">image_feats</span><span class="p">,</span> <span class="n">city_feats</span><span class="p">),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># Prédiction des coordonnées</span>
+        <span class="n">coordinates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">regression</span><span class="p">(</span><span class="n">combined</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">coordinates</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="comparaison-des-modeles">
+<h2>Comparaison des modèles<a class="headerlink" href="#comparaison-des-modeles" title="Link to this heading"></a></h2>
+<section id="selection-des-architectures-candidates">
+<h3>Sélection des architectures candidates<a class="headerlink" href="#selection-des-architectures-candidates" title="Link to this heading"></a></h3>
+<p>Pour extraire les <strong>caractéristiques visuelles des images</strong>, nous avons testé plusieurs modèles de réseaux de neurones convolutifs (<strong>CNN</strong>) préentraînés sur <strong>ImageNet</strong>.
+Ces modèles sont reconnus pour leur efficacité dans la <strong>classification d’images</strong> et peuvent être adaptés à notre tâche de <strong>régression géographique</strong> en ajoutant des couches spécifiques.</p>
+<p><strong>Tableau comparatif des modèles :</strong></p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Comparaison des modèles CNN pour l’extraction des caractéristiques</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 40.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Modèle</p></th>
+<th class="head"><p>Définition simple</p></th>
+<th class="head"><p>Particularité</p></th>
+<th class="head"><p>Inconvénient</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ResNet50</p></td>
+<td><p>Réseau à 50 couches avec des connexions résiduelles</p></td>
+<td><p>Bonne performance pour la classification, profondeur importante</p></td>
+<td><p>Poids importants, coûteux en calcul</p></td>
+</tr>
+<tr class="row-odd"><td><p>ResNet18</p></td>
+<td><p>Réseau à 18 couches avec des connexions résiduelles</p></td>
+<td><p>Architecture plus légère, rapide à entraîner</p></td>
+<td><p>Moins performant pour des tâches complexes</p></td>
+</tr>
+<tr class="row-even"><td><p>EfficientNet_B0</p></td>
+<td><p>Modèle compact et efficace pour la vision</p></td>
+<td><p>Bon compromis entre performance et légèreté</p></td>
+<td><p>Moins performant que les versions plus grandes (B4, B7)</p></td>
+</tr>
+<tr class="row-odd"><td><p>DenseNet121</p></td>
+<td><p>Réseau dense avec 121 couches, forte réutilisation des caractéristiques</p></td>
+<td><p>Faible nombre de paramètres par rapport à sa profondeur</p></td>
+<td><p>Plus lent en pratique, consommation mémoire élevée</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Le choix du modèle dépend d’un <strong>équilibre entre précision et efficacité</strong>.
+Pour des <strong>applications en temps réel</strong>, un modèle léger comme <strong>ResNet18</strong> ou <strong>EfficientNet_B0</strong> est préférable.
+Pour des résultats plus précis, <strong>ResNet50</strong> et <strong>DenseNet121</strong> offrent une meilleure extraction de caractéristiques, mais au prix d’une <strong>complexité accrue</strong>.</p>
+</div>
+</section>
+</section>
+<section id="evaluation-des-performances">
+<h2>Évaluation des performances<a class="headerlink" href="#evaluation-des-performances" title="Link to this heading"></a></h2>
+<section id="criteres-d-evaluation">
+<h3>Critères d’évaluation<a class="headerlink" href="#criteres-d-evaluation" title="Link to this heading"></a></h3>
+<p>Pour chaque modèle testé, les performances ont été mesurées en utilisant les <strong>métriques suivantes</strong> :</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Métriques d’évaluation des modèles</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 50.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Métrique</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Particularité</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MSE</p></td>
+<td><p>Mean Squared Error</p></td>
+<td><p>Évalue l’erreur quadratique moyenne entre les prédictions et les valeurs réelles.</p></td>
+</tr>
+<tr class="row-odd"><td><p>R²</p></td>
+<td><p>Coefficient de détermination</p></td>
+<td><p>Indique la proportion de la variance expliquée par le modèle.</p></td>
+</tr>
+<tr class="row-even"><td><p>Mean Distance Error</p></td>
+<td><p>Distance moyenne entre les coordonnées prédites et les coordonnées réelles</p></td>
+<td><p>Mesure l’exactitude géographique.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Median Distance Error</p></td>
+<td><p>Médiane de la distance entre les coordonnées prédites et les coordonnées réelles</p></td>
+<td><p>Réduit l’impact des valeurs aberrantes.</p></td>
+</tr>
+<tr class="row-even"><td><p>Epoch du meilleur résultat</p></td>
+<td><p>Numéro de l’époque où la perte a été minimale</p></td>
+<td><p>Permet d’identifier le meilleur point d’entraînement.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>L’utilisation de plusieurs métriques permet d’avoir une <strong>évaluation complète</strong> des performances du modèle,
+en tenant compte à la fois de la <strong>précision géographique</strong> et de la <strong>stabilité des prédictions</strong>.</p>
+</div>
+</section>
+<section id="procedure-d-evaluation">
+<h3>Procédure d’évaluation<a class="headerlink" href="#procedure-d-evaluation" title="Link to this heading"></a></h3>
+<p>Pour chaque architecture de modèle, nous avons suivi les étapes suivantes :</p>
+<ol class="arabic simple">
+<li><p><strong>Préparation des données</strong> :
+- Diviser les données en deux ensembles : entraînement et validation.</p></li>
+<li><p><strong>Entraînement</strong> :
+- Former le modèle sur les données d’entraînement.
+- À chaque époque, évaluer les performances sur l’ensemble de validation en calculant les erreurs de prédiction (distance moyenne et médiane des erreurs).
+- Si la médiane de l’erreur est la plus faible observée jusqu’à présent, sauvegarder le modèle.</p></li>
+<li><p><strong>Sélection du meilleur modèle</strong> :
+- Choisir le modèle sauvegardé ayant la plus faible médiane d’erreur sur l’ensemble de validation.</p></li>
+<li><p><strong>Évaluation finale</strong> :
+- Évaluer le meilleur modèle sur l’ensemble de test pour mesurer les performances finales.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Preparing data...&quot;</span><span class="p">)</span>
+
+  <span class="c1"># Charger les caractéristiques des villes</span>
+  <span class="n">city_features</span><span class="p">,</span> <span class="n">feature_cols</span> <span class="o">=</span> <span class="n">prepare_city_features</span><span class="p">(</span><span class="n">city_features_path</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">city_features</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;City features not found. Please check the path.&quot;</span><span class="p">)</span>
+      <span class="k">return</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using model with both image and city features (total city features: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_cols</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+  <span class="c1"># Créer le jeu de données</span>
+  <span class="n">dataset</span> <span class="o">=</span> <span class="n">ImageGPSDataset</span><span class="p">(</span><span class="n">csv_file</span><span class="o">=</span><span class="n">csv_path</span><span class="p">,</span>
+                           <span class="n">images_folder</span><span class="o">=</span><span class="n">images_folder</span><span class="p">,</span>
+                           <span class="n">city_features</span><span class="o">=</span><span class="n">city_features</span><span class="p">,</span>
+                           <span class="n">feature_cols</span><span class="o">=</span><span class="n">feature_cols</span><span class="p">,</span>
+                           <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
+
+  <span class="c1"># Vérifier si le dataset est vide après filtrage</span>
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR: No valid data left after filtering out images without city metadata!&quot;</span><span class="p">)</span>
+      <span class="k">return</span>
+
+  <span class="c1"># Division du jeu de données</span>
+  <span class="n">train_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.8</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">))</span>
+  <span class="n">val_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span> <span class="o">-</span> <span class="n">train_size</span>
+  <span class="n">train_dataset</span><span class="p">,</span> <span class="n">val_dataset</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">random_split</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="p">[</span><span class="n">train_size</span><span class="p">,</span> <span class="n">val_size</span><span class="p">])</span>
+
+  <span class="n">train_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+  <span class="n">val_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">val_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creating model...&quot;</span><span class="p">)</span>
+  <span class="n">model</span> <span class="o">=</span> <span class="n">ResNet50SModel</span><span class="p">(</span><span class="n">num_city_features</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_cols</span><span class="p">))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+  <span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+  <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">)</span>
+  <span class="n">scheduler</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">ReduceLROnPlateau</span><span class="p">(</span><span class="n">optimizer</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">patience</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting training...&quot;</span><span class="p">)</span>
+  <span class="n">train_losses</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">val_losses</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">mean_distances</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">median_distances</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">r2_scores</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">mse_scores</span> <span class="o">=</span> <span class="p">[]</span>
+
+  <span class="n">best_model_info</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s1">&#39;epoch&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s1">&#39;median_distance&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">),</span>
+      <span class="s1">&#39;mean_distance&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s1">&#39;r2&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s1">&#39;mse&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s1">&#39;state_dict&#39;</span><span class="p">:</span> <span class="kc">None</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">num_epochs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+      <span class="n">train_loss</span> <span class="o">=</span> <span class="n">train_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+      <span class="n">train_losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_loss</span><span class="p">)</span>
+
+      <span class="n">val_loss</span><span class="p">,</span> <span class="n">mean_distance</span><span class="p">,</span> <span class="n">median_distance</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">mse</span> <span class="o">=</span> <span class="n">validate_model</span><span class="p">(</span>
+          <span class="n">model</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">device</span>
+      <span class="p">)</span>
+      <span class="n">val_losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val_loss</span><span class="p">)</span>
+      <span class="n">mean_distances</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mean_distance</span><span class="p">)</span>
+      <span class="n">median_distances</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">median_distance</span><span class="p">)</span>
+      <span class="n">r2_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>
+      <span class="n">mse_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mse</span><span class="p">)</span>
+
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Train Loss: </span><span class="si">{</span><span class="n">train_loss</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, Val Loss: </span><span class="si">{</span><span class="n">val_loss</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean Distance: </span><span class="si">{</span><span class="n">mean_distance</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km, Median Distance: </span><span class="si">{</span><span class="n">median_distance</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km&quot;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R² Score: </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, MSE: </span><span class="si">{</span><span class="n">mse</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+      <span class="n">scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">val_loss</span><span class="p">)</span>
+
+      <span class="c1"># Sauvegarde du meilleur modèle basé sur la médiane de distance</span>
+      <span class="k">if</span> <span class="n">median_distance</span> <span class="o">&lt;</span> <span class="n">best_model_info</span><span class="p">[</span><span class="s1">&#39;median_distance&#39;</span><span class="p">]:</span>
+          <span class="n">best_model_info</span> <span class="o">=</span> <span class="p">{</span>
+              <span class="s1">&#39;epoch&#39;</span><span class="p">:</span> <span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="s1">&#39;median_distance&#39;</span><span class="p">:</span> <span class="n">median_distance</span><span class="p">,</span>
+              <span class="s1">&#39;mean_distance&#39;</span><span class="p">:</span> <span class="n">mean_distance</span><span class="p">,</span>
+              <span class="s1">&#39;r2&#39;</span><span class="p">:</span> <span class="n">r2</span><span class="p">,</span>
+              <span class="s1">&#39;mse&#39;</span><span class="p">:</span> <span class="n">mse</span><span class="p">,</span>
+              <span class="s1">&#39;state_dict&#39;</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+          <span class="p">}</span>
+          <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New best model found at epoch </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> with median distance: </span><span class="si">{</span><span class="n">median_distance</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km&quot;</span><span class="p">)</span>
+          <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">({</span>
+              <span class="s1">&#39;model_state_dict&#39;</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span>
+              <span class="s1">&#39;num_city_features&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">feature_cols</span><span class="p">),</span>
+              <span class="s1">&#39;best_median_distance&#39;</span><span class="p">:</span> <span class="n">median_distance</span>
+          <span class="p">},</span> <span class="n">output_model_path</span><span class="p">)</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Training complete!&quot;</span><span class="p">)</span>
+
+  <span class="c1"># Affichage des résultats de la meilleure époque</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Best Model Performance ---&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Best Epoch: </span><span class="si">{</span><span class="n">best_model_info</span><span class="p">[</span><span class="s1">&#39;epoch&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Median Distance: </span><span class="si">{</span><span class="n">best_model_info</span><span class="p">[</span><span class="s1">&#39;median_distance&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean Distance: </span><span class="si">{</span><span class="n">best_model_info</span><span class="p">[</span><span class="s1">&#39;mean_distance&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R² Score: </span><span class="si">{</span><span class="n">best_model_info</span><span class="p">[</span><span class="s1">&#39;r2&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MSE: </span><span class="si">{</span><span class="n">best_model_info</span><span class="p">[</span><span class="s1">&#39;mse&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+  <span class="c1"># Tracer les résultats d&#39;entraînement</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+
+  <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_losses</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Train Loss&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">val_losses</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation Loss&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;MSE Loss&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+  <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mean_distances</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Mean Distance (km)&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">median_distances</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Median Distance (km)&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">best_model_info</span><span class="p">[</span><span class="s1">&#39;epoch&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Best Epoch (</span><span class="si">{</span><span class="n">best_model_info</span><span class="p">[</span><span class="s2">&quot;epoch&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Prediction Error&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Distance (km)&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+  <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r2_scores</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;R² Score&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">best_model_info</span><span class="p">[</span><span class="s1">&#39;epoch&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Best Epoch (</span><span class="si">{</span><span class="n">best_model_info</span><span class="p">[</span><span class="s2">&quot;epoch&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;R² Score&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;R²&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+  <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mse_scores</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MSE&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">best_model_info</span><span class="p">[</span><span class="s1">&#39;epoch&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Best Epoch (</span><span class="si">{</span><span class="n">best_model_info</span><span class="p">[</span><span class="s2">&quot;epoch&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mean Squared Error&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;MSE&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+  <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;/kaggle/working/resnet50_training_results.png&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+  <span class="c1"># Charger le meilleur modèle et faire une évaluation finale</span>
+  <span class="n">best_model</span> <span class="o">=</span> <span class="n">ResNetGPSModel</span><span class="p">(</span><span class="n">num_city_features</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_cols</span><span class="p">))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+  <span class="n">best_model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">best_model_info</span><span class="p">[</span><span class="s1">&#39;state_dict&#39;</span><span class="p">])</span>
+  <span class="n">_</span><span class="p">,</span> <span class="n">final_mean</span><span class="p">,</span> <span class="n">final_median</span><span class="p">,</span> <span class="n">final_r2</span><span class="p">,</span> <span class="n">final_mse</span> <span class="o">=</span> <span class="n">validate_model</span><span class="p">(</span>
+      <span class="n">best_model</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">device</span>
+  <span class="p">)</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Final Evaluation with Best Model ---&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean Distance: </span><span class="si">{</span><span class="n">final_mean</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Median Distance: </span><span class="si">{</span><span class="n">final_median</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R² Score: </span><span class="si">{</span><span class="n">final_r2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MSE: </span><span class="si">{</span><span class="n">final_mse</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Les modèles ont été évalués sur deux aspects principaux :</p>
+<ul class="simple">
+<li><p><strong>Qualité de reconstruction des coordonnées géographiques</strong>.</p></li>
+<li><p><strong>Précision des prédictions de localisation</strong>.</p></li>
+</ul>
+</section>
+</section>
+<section id="resultats-et-analyses">
+<h2>Résultats et analyses<a class="headerlink" href="#resultats-et-analyses" title="Link to this heading"></a></h2>
+<section id="benchmark-des-performances">
+<h3>Benchmark des performances<a class="headerlink" href="#benchmark-des-performances" title="Link to this heading"></a></h3>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Performance comparative des modèles</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 10.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Modèle</p></th>
+<th class="head"><p>MSE</p></th>
+<th class="head"><p>R2</p></th>
+<th class="head"><p>Median Distance Error</p></th>
+<th class="head"><p>Mean Distance Error</p></th>
+<th class="head"><p>Meilleure Époque</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ResNet50</p></td>
+<td><p>0.882663</p></td>
+<td><p>0.6430</p></td>
+<td><p>102.14 km</p></td>
+<td><p>118.21 km</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-odd"><td><p>ResNet18</p></td>
+<td><p>0.865191</p></td>
+<td><p>0.6426</p></td>
+<td><p>108.83 km</p></td>
+<td><p>121.43 km</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-even"><td><p>EfficientB0</p></td>
+<td><p>2.167512</p></td>
+<td><p>0.1287</p></td>
+<td><p>163.87 km</p></td>
+<td><p>188.39 km</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-odd"><td><p>DenseNet121</p></td>
+<td><p>1.532988</p></td>
+<td><p>0.3627</p></td>
+<td><p>141.02 km</p></td>
+<td><p>160.35 km</p></td>
+<td><p>15</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cette évaluation comparative permet d’identifier le modèle offrant le meilleur compromis entre précision et efficacité pour notre tâche de régression géographique.</p>
+</div>
+</section>
+<section id="visualisation-des-performances">
+<h3>Visualisation des performances<a class="headerlink" href="#visualisation-des-performances" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="_images/resnet50_curve.jpg"><img alt="Courbe d'apprentissage ResNet50" src="_images/resnet50_curve.jpg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>ResNet50</strong></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="_images/resnet18_curve.jpg"><img alt="Courbe d'apprentissage ResNet18" src="_images/resnet18_curve.jpg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>ResNet18</strong></span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="_images/efficientb0_curve.jpg"><img alt="Courbe d'apprentissage EfficientB0" src="_images/efficientb0_curve.jpg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>EfficientB0</strong></span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-default" id="id7">
+<a class="reference internal image-reference" href="_images/densenet121_curve.jpg"><img alt="Courbe d'apprentissage DenseNet121" src="_images/densenet121_curve.jpg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>DenseNet121</strong></span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="remarque admonition">
+<p class="admonition-title">Remarque</p>
+<p>Nous avons d’abord essayé d’entraîner le modèle uniquement sur les images et leurs coordonnées, sans ajouter d’autres informations (comme les <strong>City_features</strong>), mais les résultats obtenus n’étaient pas satisfaisants.</p>
+</div>
+<p>Voici les résultats pour ResNet18. On remarque aisément la différence entre l’entraînement sans <strong>City_features</strong> et avec.</p>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Performance de Resnet18</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 10.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Modèle</p></th>
+<th class="head"><p>MSE</p></th>
+<th class="head"><p>R2</p></th>
+<th class="head"><p>Median Distance Error</p></th>
+<th class="head"><p>Mean Distance Error</p></th>
+<th class="head"><p>Meilleure Époque</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ResNet18</p></td>
+<td><p>2.743270</p></td>
+<td><p>0.1461</p></td>
+<td><p>172.64 km</p></td>
+<td><p>198.79 km</p></td>
+<td><p>15</p></td>
+</tr>
+</tbody>
+</table>
+<div class="resnet18 docutils container">
+<a class="reference internal image-reference" href="_images/resnet_18_sf.jpg"><img alt="Resnet18" class="align-center" src="_images/resnet_18_sf.jpg" style="width: 60%;" />
+</a>
+</div>
+</section>
+</section>
+<section id="analyse-des-courbes-d-apprentissage">
+<h2>Analyse des courbes d’apprentissage<a class="headerlink" href="#analyse-des-courbes-d-apprentissage" title="Link to this heading"></a></h2>
+<p>Les graphiques montrent l’évolution des erreurs de prédiction (moyenne et médiane) au cours des époques d’entraînement:</p>
+<ol class="arabic simple">
+<li><p><strong>ResNet50</strong>:
+* Diminution progressive de l’erreur avec quelques oscillations
+* Convergence autour de l’époque 12
+* Erreur moyenne finale ~118 km, erreur médiane ~102 km</p></li>
+<li><p><strong>ResNet18</strong>:
+* Diminution plus régulière de l’erreur
+* Meilleure performance à l’époque 15
+* Erreur moyenne finale ~121 km, erreur médiane ~109 km</p></li>
+<li><p><strong>EfficientB0</strong>:
+* Comportement plus instable avec des oscillations importantes
+* Pic d’erreur vers l’époque 10
+* Performance globale inférieure aux modèles ResNet</p></li>
+<li><p><strong>DenseNet121</strong>:
+* Courbe d’apprentissage similaire à EfficientB0 mais avec des performances légèrement meilleures
+* Erreurs plus élevées que les modèles ResNet</p></li>
+</ol>
+<section id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Meilleur modèle global</strong>: ResNet50 présente globalement les meilleures performances avec les erreurs de distance les plus faibles et un bon R².</p></li>
+<li><p><strong>Efficacité des architectures</strong>: Les architectures ResNet semblent mieux adaptées à cette tâche de prédiction géographique que EfficientB0 ou DenseNet121.</p></li>
+<li><p><strong>Compromise complexité-performance</strong>: ResNet18, malgré sa taille plus réduite que ResNet50, offre des performances très proches, ce qui pourrait en faire un choix optimal si les ressources de calcul sont limitées.</p></li>
+</ol>
+</section>
+<section id="recommandations">
+<h3>Recommandations<a class="headerlink" href="#recommandations" title="Link to this heading"></a></h3>
+<p>Pour cette tâche spécifique, ResNet50 serait le modèle recommandé en priorité, suivi de près par ResNet18 qui offre un bon compromis entre complexité et performance.</p>
+<div class="architecture-resnet50 docutils container">
+<a class="reference internal image-reference" href="_images/RSN50.jpg"><img alt="Architecture de resnet50" class="align-center" src="_images/RSN50.jpg" style="width: 85%;" />
+</a>
+</div>
+<ol class="arabic simple">
+<li><p>Zero Padding : Ajoute des zéros autour de l’image d’entrée pour conserver les dimensions après la convolution.</p></li>
+<li><p>Convolution (CONV) : Opération linéaire qui applique des filtres sur l’entrée pour extraire des caractéristiques.</p></li>
+<li><p>Batch Normalization (Batch Norm) : Normalise les activations d’une couche précédente afin de stabiliser et d’accélérer l’apprentissage.</p></li>
+<li><p>ReLU (Rectified Linear Unit) : Fonction d’activation non linéaire utilisée pour introduire de la non-linéarité dans le réseau.</p></li>
+<li><p>Max Pooling (Max Pool) : Réduit les dimensions de l’image en sélectionnant la valeur maximale dans chaque région de la carte d’activation.</p></li>
+<li><p>Convolutional Block (Conv Block) : Bloc résiduel contenant des couches de convolution avec une connexion raccourcie (skip connection) pour apprendre les résidus.</p></li>
+<li><p>Identity Block (ID Block) : Bloc sans modification de dimension qui apprend à ajuster l’identité de l’entrée.</p></li>
+<li><p>Average Pooling (Avg Pool) : Moyenne les valeurs dans une région spécifique pour réduire la taille des cartes d’activation.</p></li>
+<li><p>Flattening : Transforme la sortie 2D des cartes d’activation en un vecteur 1D pour la couche entièrement connectée (FC).</p></li>
+<li><p>Fully Connected Layer (FC) : Couche dense qui effectue la classification finale après la phase de convolution et de pooling.</p></li>
+</ol>
+<div class="indication admonition">
+<p class="admonition-title">Indication</p>
+<p>Le modèle resnet50 (ainsi que tous les autres modèles candidats avec leurs versions) est déjà disponible dans Torch.
+Inutile de chercher ailleurs, il suffit d’avoir Python 3.8 ou une version plus récente. Vous pouvez l’importer directement depuis <strong>torchvision.models</strong></p>
+</div>
+<p>Pour plus de détails sur la démarche et les calculs, consultez notre <strong>notebook Colab</strong> :</p>
+<div class="attention admonition">
+<p class="admonition-title">Attention</p>
+<p>Veuillez remplacer les chemins des fichiers existants dans les cellules du notebook par ceux correspondant à votre environnement.</p>
+</div>
+<a href="https://colab.research.google.com/drive/19aClr0Klj6ZdcKfQF3c6RGXOZfhqCptF#scrollTo=RUQuTL1_7dqW" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a><div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Donn%C3%A9es.html" class="btn btn-neutral float-left" title="Données" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Amine Essahraoui.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

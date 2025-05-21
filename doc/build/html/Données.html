@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Données &mdash; MarocExplorer CV documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/indication.css?v=e47f44fb" />
+      <link rel="stylesheet" type="text/css" href="_static/remarque.css?v=81094b0d" />
+      <link rel="stylesheet" type="text/css" href="_static/attention.css?v=9a7e21cd" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/attention.css?v=9a7e21cd" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=27b5f0dd"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Modèle" href="Mod%C3%A8le.html" />
+    <link rel="prev" title="Équipe" href="%C3%89quipe.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%C3%89quipe.html">Équipe</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Données</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sources-des-donnees">Sources des données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#richesse-des-donnees">Richesse des Données</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#distribution-initiale">Distribution initiale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#distribution-des-donnees-marocaines">Distribution des données marocaines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exemples-d-images-du-dataset">Exemples d’images du dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#enrichissement-des-donnees-features-engineering">Enrichissement des Données (Features Engineering)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Mod%C3%A8le.html">Modèle</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MarocExplorer</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Données</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Données.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="donnees">
+<h1>Données<a class="headerlink" href="#donnees" title="Link to this heading"></a></h1>
+<p>La première étape du projet <strong>MarocExplorer</strong> a été la <strong>collecte des données</strong>.
+Le principal défi rencontré a été l’<strong>absence d’une source directe</strong> d’images marocaines avec leurs <strong>coordonnées géographiques</strong> (latitude et longitude).
+Pour pallier ce problème, nous avons créé notre <strong>propre dataset</strong>, regroupant ces images avec leurs <strong>labels géographiques</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>La collecte de données géolocalisées représente un enjeu majeur dans les projets de vision par ordinateur liés à la reconnaissance de lieux. Notre approche multi-sources nous a permis de constituer un dataset riche et représentatif du territoire marocain.</p>
+</div>
+<section id="sources-des-donnees">
+<h2>Sources des données<a class="headerlink" href="#sources-des-donnees" title="Link to this heading"></a></h2>
+<p>Nous avons collecté ces données à partir de <strong>trois sources principales</strong> :</p>
+<p><strong>OSV5M Dataset de Hugging Face</strong>
+Lien : <a class="reference external" href="https://huggingface.co/datasets/osv5m/osv5m/tree/main">OSV5M sur Hugging Face</a> <a class="reference internal" href="_images/HugginFace.png"><img alt="Hugging Face" class="align-middle" src="_images/HugginFace.png" style="width: 30px; height: 30px;" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>OSV5M (Open Street View 5 Million) est un dataset open-source comprenant plus de 5 millions d’images de vues de rues géolocalisées à travers le monde. Pour notre projet, nous avons extrait uniquement les images du Maroc, qui représentent environ 2% du dataset total.</p>
+</div>
+<p><strong>Mapillary Vistas</strong>
+Lien : <a class="reference external" href="https://www.mapillary.com/dataset/vistas">Mapillary Vistas Dataset</a> <a class="reference internal" href="_images/Mapillary.png"><img alt="Mapillary" class="align-middle" src="_images/Mapillary.png" style="width: 65px; height: 65px;" /></a></p>
+<p><strong>Google Street View (dataset depuis Kaggle)</strong>
+Lien : <a class="reference external" href="https://www.kaggle.com/datasets/paulchambaz/google-street-view">Google Street view sur Kaggle</a> <a class="reference internal" href="_images/image.png"><img alt="Kaggle Logo" class="align-middle" src="_images/image.png" style="width: 30px; height: 30px;" /></a></p>
+</section>
+<section id="richesse-des-donnees">
+<h2>Richesse des Données<a class="headerlink" href="#richesse-des-donnees" title="Link to this heading"></a></h2>
+<p>La source la plus <strong>riche en données</strong> pour notre projet <strong>MarocExplorer</strong> est sans aucun doute le dataset <strong>OSV5M de Hugging Face</strong>. Nous avons sélectionné <strong>uniquement les images du Maroc</strong> accompagnées de leurs <strong>coordonnées géographiques</strong> (latitude et longitude).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Le processus de filtrage a impliqué l’utilisation des coordonnées géographiques pour isoler les images situées dans les limites territoriales du Maroc. Cette opération a nécessité la définition précise des frontières géographiques du pays dans notre système.</p>
+</div>
+<section id="distribution-initiale">
+<h3>Distribution initiale<a class="headerlink" href="#distribution-initiale" title="Link to this heading"></a></h3>
+<p>Les données brutes sont distribuées en fonction des <strong>coordonnées géographiques</strong>.
+Voici un aperçu visuel de cette distribution :</p>
+<a class="reference internal image-reference" href="_images/disimages.jpg"><img alt="Distribution des images par latitude et longitude" class="align-center" src="_images/disimages.jpg" style="width: 80%;" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Distribution globale du dataset OSV5M</strong></p>
+<p>Le dataset OSV5M contient plus de 5 millions d’images réparties à travers le monde, avec une distribution inégale :</p>
+<ul class="simple">
+<li><p><strong>Amérique du Nord</strong> : ~40% des images (forte concentration aux États-Unis)</p></li>
+<li><p><strong>Europe</strong> : ~30% des images (couverture dense dans les pays occidentaux)</p></li>
+<li><p><strong>Asie</strong> : ~20% des images (concentration en Asie de l’Est et du Sud-Est)</p></li>
+<li><p><strong>Afrique</strong> : ~5% des images (dont environ 25% pour l’Afrique du Nord)</p></li>
+<li><p><strong>Autres régions</strong> : ~5% (Amérique du Sud, Océanie)</p></li>
+</ul>
+</div>
+</section>
+<section id="distribution-des-donnees-marocaines">
+<h3>Distribution des données marocaines<a class="headerlink" href="#distribution-des-donnees-marocaines" title="Link to this heading"></a></h3>
+<p>Les images collectées pour le projet MarocExplorer présentent une <strong>répartition géographique représentative du territoire marocain</strong>, avec une concentration plus importante dans les zones urbaines et touristiques.</p>
+<p><a class="reference internal" href="_images/left.jpg"><img alt="Carte de distribution des images au Maroc" src="_images/left.jpg" style="width: 48%;" /></a> <a class="reference internal" href="_images/right.jpg"><img alt="Distribution des images par ville" src="_images/right.jpg" style="width: 48%;" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cette visualisation met en évidence une concentration d’images dans les zones urbaines et le long des axes routiers principaux, avec une densité particulièrement élevée dans les régions touristiques comme Marrakech, Fès et la côte atlantique. Les zones montagneuses (Atlas) et désertiques (Sud-Est) sont relativement moins représentées.</p>
+</div>
+</section>
+<section id="exemples-d-images-du-dataset">
+<h3>Exemples d’images du dataset<a class="headerlink" href="#exemples-d-images-du-dataset" title="Link to this heading"></a></h3>
+<p>Voici quelques exemples représentatifs des images collectées dans notre dataset marocain :</p>
+<p><a class="reference internal" href="_images/exemple1.jpg"><img alt="Exemple 1" src="_images/exemple1.jpg" style="width: 32%;" /></a> <a class="reference internal" href="_images/exemple2.jpg"><img alt="Exemple 2" src="_images/exemple2.jpg" style="width: 32%;" /></a> <a class="reference internal" href="_images/exemple3.jpg"><img alt="Exemple 3" src="_images/exemple3.jpg" style="width: 32%;" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ces exemples illustrent la diversité des données capturées, représentant différentes régions du Maroc avec leurs caractéristiques architecturales et paysagères distinctives.</p>
+</div>
+<p>—</p>
+</section>
+</section>
+<section id="enrichissement-des-donnees-features-engineering">
+<h2>Enrichissement des Données (Features Engineering)<a class="headerlink" href="#enrichissement-des-donnees-features-engineering" title="Link to this heading"></a></h2>
+<p>Pour <strong>améliorer les performances du modèle</strong>, nous avons enrichi chaque image avec des informations supplémentaires :</p>
+<ul class="simple">
+<li><p>Nous avons associé chaque image à sa <strong>ville correspondante</strong> en calculant la <strong>distance</strong> entre l’image et les villes marocaines à partir de leurs coordonnées géographiques.</p></li>
+<li><dl class="simple">
+<dt>Les coordonnées des villes proviennent de cette source :</dt><dd><ul>
+<li><p>Lien : <a class="reference external" href="https://simplemaps.com/data/ma-citi">Coordonnées des villes marocaines</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Le calcul des distances a été réalisé en utilisant la formule de Haversine, qui prend en compte la courbure de la Terre et fournit donc des distances plus précises que les calculs euclidiens. Cela était particulièrement important pour les images situées dans des zones frontalières ou côtières.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">haversine_distance</span><span class="p">(</span><span class="n">lat1</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">lat2</span><span class="p">,</span> <span class="n">lon2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calcule la distance du grand cercle entre deux points</span>
+<span class="sd">    sur la Terre (spécifiés en degrés décimaux).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Conversion des degrés décimaux en radians</span>
+    <span class="n">lat1</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">lat2</span><span class="p">,</span> <span class="n">lon2</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">,</span> <span class="p">[</span><span class="n">lat1</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">lat2</span><span class="p">,</span> <span class="n">lon2</span><span class="p">])</span>
+
+    <span class="c1"># Formule de Haversine</span>
+    <span class="n">dlon</span> <span class="o">=</span> <span class="n">lon2</span> <span class="o">-</span> <span class="n">lon1</span>
+    <span class="n">dlat</span> <span class="o">=</span> <span class="n">lat2</span> <span class="o">-</span> <span class="n">lat1</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">dlat</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lat1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lat2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">dlon</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mi">6371</span>  <span class="c1"># Rayon de la Terre en kilomètres</span>
+    <span class="k">return</span> <span class="n">c</span> <span class="o">*</span> <span class="n">r</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Chargement de ta dataframe villes</span>
+<span class="n">villes_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\hp\Desktop\ma.csv&quot;</span><span class="p">)</span>  <span class="c1"># Doit contenir : city, lat, lng, etc.</span>
+
+<span class="c1"># Chargement de ta dataframe des points</span>
+<span class="n">points_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\hp\Desktop\Data_maroc\maroc_data.csv&quot;</span><span class="p">)</span>  <span class="c1"># Doit contenir : latitude, longitude</span>
+<span class="n">points_df</span> <span class="o">=</span> <span class="n">points_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;unique_country&#39;</span> <span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Fonction pour trouver la ville la plus proche</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">trouver_ville_proche</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">villes_df</span><span class="p">):</span>
+   <span class="n">distances</span> <span class="o">=</span> <span class="n">haversine_distance</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">villes_df</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">villes_df</span><span class="p">[</span><span class="s1">&#39;lng&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+   <span class="n">idx_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">villes_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idx_min</span><span class="p">][</span><span class="s1">&#39;city&#39;</span><span class="p">]</span>
+
+<span class="c1"># Appliquer la fonction à tous les points</span>
+<span class="n">points_df</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">points_df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">trouver_ville_proche</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">],</span> <span class="n">villes_df</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Résultat</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">points_df</span><span class="p">)</span>
+
+<span class="n">points_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\Users\hp\Desktop\maroc_data_finale.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>En plus de la <strong>géolocalisation</strong>, nous avons créé des <strong>données supplémentaires sur chaque ville</strong> (région, points d’intérêt…) pour permettre au modèle d’exploiter des informations contextuelles.</p>
+<p>Les données brutes sont distribuées en fonction des <strong>coordonnées géographiques</strong>.
+Voici un aperçu visuel de cette distribution :</p>
+<a class="reference internal image-reference" href="_images/Data_villes.png"><img alt="MétaDonnées" class="align-center" src="_images/Data_villes.png" style="width: 100%;" />
+</a>
+<p>—</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cette contextualisation des données a impliqué l’intégration d’informations démographiques, historiques et culturelles pour chaque ville. Nous avons également ajouté des métadonnées concernant les monuments historiques, les sites touristiques et les particularités architecturales régionales, permettant ainsi une classification plus fine.</p>
+</div>
+<p>Pour plus de détails sur la démarche et les calculs, consultez notre <strong>notebook Colab</strong> :</p>
+<div class="attention admonition">
+<p class="admonition-title">Attention</p>
+<p>Veuillez remplacer les chemins des fichiers existants dans les cellules du notebook par ceux correspondant à votre environnement.</p>
+</div>
+<a href="https://colab.research.google.com/drive/1Cy9826lwrb5RWqyPxzZ0JlEGdy9BQ1UE#scrollTo=woshiWhgsTMM" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Les coordonnées GPS peuvent présenter une marge d’erreur, particulièrement dans les zones urbaines denses où les bâtiments peuvent interférer avec la précision du signal. Cette limitation a été prise en compte lors de l’étiquetage des images.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="%C3%89quipe.html" class="btn btn-neutral float-left" title="Équipe" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Mod%C3%A8le.html" class="btn btn-neutral float-right" title="Modèle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Amine Essahraoui.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
