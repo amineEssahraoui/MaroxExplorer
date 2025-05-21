@@ -638,7 +638,8 @@ Pour plus de détails sur la démarche et les calculs, consultez notre **noteboo
 
    5. Testez le modèle et visualisez quelques prédictions.
 
-
+.. note::  
+   En raison de la réduction des données, les résultats que vous obtiendrez peuvent être très différents de ceux mentionnés précédemment. Cela est tout à fait logique, car le modèle est testé sur un ensemble beaucoup plus petit et potentiellement moins représentatif.
 
 
 .. toctree::
