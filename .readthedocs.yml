@@ -6,7 +6,7 @@ build:
     python: "3.10"
 
 sphinx:
-  configuration: docs/conf.py  # ou conf.py si à la racine
+  configuration: doc/source/conf.py  # ou conf.py si à la racine
 
 
 python:
