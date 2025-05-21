@@ -630,11 +630,13 @@ Pour plus de détails sur la démarche et les calculs, consultez notre **noteboo
 
    1. Téléchargez les données réduites depuis ce lien : https://drive.google.com/drive/folders/16s7_JoakN-84FbYH6WjBfOHoRJf_tqC5?usp=drive_link
 
-   2. Adaptez les chemins d'accès dans le notebook en remplaçant les chemins existants par ceux correspondant à votre environnement.
+   2. Placez le fichier téléchargé dans votre Google Drive.
 
-   3. Exécutez les fonctions principales du notebook.
+   3. Adaptez les chemins d'accès dans le notebook en remplaçant les chemins existants par ceux correspondant à votre environnement.
 
-   4. Testez le modèle et visualisez quelques prédictions.
+   4. Exécutez les fonctions principales du notebook.
+
+   5. Testez le modèle et visualisez quelques prédictions.
 
 
 
