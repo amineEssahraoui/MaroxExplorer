@@ -625,6 +625,20 @@ Pour plus de détails sur la démarche et les calculs, consultez notre **noteboo
 
    <a href="https://colab.research.google.com/drive/19aClr0Klj6ZdcKfQF3c6RGXOZfhqCptF#scrollTo=RUQuTL1_7dqW" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
+.. note:: 
+   En raison de la taille importante des données, nous avons créé un ensemble de données réduit contenant 200 images. Cela vous permet de tester les modèles vous-même, sans avoir à passer par toutes les étapes de préparation des données. Pour l’utiliser, suivez les étapes ci-dessous :
+
+   1. Téléchargez les données réduites depuis ce lien : https://drive.google.com/drive/folders/16s7_JoakN-84FbYH6WjBfOHoRJf_tqC5?usp=drive_link
+
+   2. Adaptez les chemins d'accès dans le notebook en remplaçant les chemins existants par ceux correspondant à votre environnement.
+
+   3. Exécutez les fonctions principales du notebook.
+
+   4. Testez le modèle et visualisez quelques prédictions.
+
+
+
+
 .. toctree::
    :maxdepth: 3
    :caption: Contenu :
