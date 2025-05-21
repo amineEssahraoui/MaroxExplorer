@@ -623,7 +623,7 @@ Pour plus de détails sur la démarche et les calculs, consultez notre **noteboo
 
 .. raw:: html
 
-   <a href="https://colab.research.google.com/drive/19aClr0Klj6ZdcKfQF3c6RGXOZfhqCptF#scrollTo=RUQuTL1_7dqW" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+   <a href="https://colab.research.google.com/drive/19aClr0Klj6ZdcKfQF3c6RGXOZfhqCptF#scrollTo=Mk6e2ud77eXI" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 .. note:: 
    En raison de la taille importante des données, nous avons créé un ensemble de données réduit contenant 200 images. Cela vous permet de tester les modèles vous-même, sans avoir à passer par toutes les étapes de préparation des données. Pour l’utiliser, suivez les étapes ci-dessous :
