@@ -1,0 +1,22 @@
+Gestion des Données
+===================
+
+La première étape du projet **MarocExplorer** a été la **collecte des données**.  
+Le principal défi rencontré a été l'**absence d'une source directe** d'images marocaines avec leurs **coordonnées géographiques** (latitude et longitude).  
+Pour pallier ce problème, nous avons créé notre **propre dataset**, regroupant ces images avec leurs **labels géographiques**.
+
+Sources des données
+-------------------
+
+Nous avons collecté ces données à partir de **trois sources principales** :
+
+1. **OSV5M Dataset de Hugging Face** :  
+   - Une base de données riche en images de divers lieux.  
+   - Lien : `https://huggingface.co/datasets/osv5m/osv5m/tree/main`  
+
+2. **Mapillary Vistas** :  
+   - Un ensemble de données comprenant des images annotées pour la vision par ordinateur.  
+   - Lien : `https://www.mapillary.com/dataset/vistas`  
+
+3. **Autre source (à insérer ultérieurement)** :  
+   - Lien : [À venir]  
