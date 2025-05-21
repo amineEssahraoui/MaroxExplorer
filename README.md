@@ -29,7 +29,8 @@ Un ensemble de transformations est appliqué pour préparer les données : trait
 Le modèle extrait automatiquement les informations visuelles pertinentes à partir des images, et peut intégrer en complément des données tabulaires issues des villes. L’objectif est d’apprendre une fonction de régression permettant d’estimer la localisation géographique.
 
 ### 4. Entraînement
-Le modèle est entraîné de manière supervisée sur les données annotées. Il est possible de tester l’impact des métadonnées des villes sur la précision en activant ou désactivant leur utilisation dans le pipeline.
+Le modèle est entraîné de manière supervisée sur les données annotées. Il est possible de tester l’impact des métadonnées des villes sur la précision en activant ou désactivant leur utilisation dans le pipeline
+
 ---
 
 ## 📂 Arborescence du projet
