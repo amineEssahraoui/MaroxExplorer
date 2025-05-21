@@ -34,7 +34,7 @@ Le modèle est entraîné de manière supervisée sur les données annotées. Il
 
 ## 📂 Arborescence du projet
 
-bash
+```text
 MarocExplorer/
 ├── data/               # Données d'entraînement
 │   ├── images/         # Dossier contenant les images urbaines
@@ -42,14 +42,15 @@ MarocExplorer/
 │   └── city_features.csv  # Caractéristiques des villes (climat, altitude, etc.)
 │
 ├── model/              # Modèle
-│   ├── modèle.pth      # Architecture du modèle
+│   └── modèle.pth      # Architecture du modèle
 │
 ├── interface/          # Interface de visualisation ou démo
-│   
+│
 ├── notebooks/          # Analyses exploratoires ou tests en notebooks
-│   └── MarocExplorer_Data.ipynb
+│   ├── MarocExplorer_Data.ipynb
 │   └── MarocExplorer_Modèle.ipynb
 │
 └── README.md           # Présentation du projet
+
 
 
