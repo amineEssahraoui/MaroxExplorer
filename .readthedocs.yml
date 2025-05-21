@@ -8,6 +8,7 @@ build:
 sphinx:
   configuration: docs/conf.py  # ou conf.py si à la racine
 
+
 python:
   install:
-    - requirements: docs/requirements.txt  # ou requirements.txt si à la racine
+    - requirements: requirements.txt
