@@ -58,5 +58,5 @@ MarocExplorer/
 ## 📚 Documentation
 
 Pour consulter la documentation complète du projet, veuillez visiter le site suivant :  
-[Documentation du projet](https://maroxexplorer.readthedocs.io/en/latest/)
+https://maroxexplorer.readthedocs.io/en/latest/index.html
 
