@@ -55,5 +55,8 @@ MarocExplorer/
 │
 └── README.md           # Présentation du projet
 
-📚 Documentation disponible ici : [MaroxExplorer sur Read the Docs](https://maroxexplorer.readthedocs.io/)
+## 📚 Documentation
+
+Pour consulter la documentation complète du projet, veuillez visiter le site suivant :  
+[Documentation du projet](https://maroxexplorer.readthedocs.io/en/latest/)
 
