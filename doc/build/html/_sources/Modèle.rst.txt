@@ -647,3 +647,4 @@ Pour plus de détails sur la démarche et les calculs, consultez notre **noteboo
    :caption: Contenu :
 
    .. prev:: Données
+   .. next:: Optimisation

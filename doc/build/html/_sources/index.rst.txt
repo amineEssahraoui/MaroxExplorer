@@ -21,3 +21,5 @@ Bienvenue à MarocExplorer documentation!
    Équipe
    Données
    Modèle
+   Optimisation
+   Usage

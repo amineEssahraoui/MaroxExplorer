@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Usage &mdash; MarocExplorer CV documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/indication.css?v=e47f44fb" />
+      <link rel="stylesheet" type="text/css" href="_static/remarque.css?v=81094b0d" />
+      <link rel="stylesheet" type="text/css" href="_static/attention.css?v=9a7e21cd" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/attention.css?v=9a7e21cd" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=27b5f0dd"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Optimisation" href="Optimisation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%C3%89quipe.html">Équipe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Donn%C3%A9es.html">Données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod%C3%A8le.html">Modèle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Optimisation.html">Optimisation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequis-communs">Prérequis Communs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mode-1-evaluation">Mode 1 : Évaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mode-2-prediction-pour-une-image">Mode 2 : Prédiction pour une Image</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MarocExplorer</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Usage</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Usage.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h1>
+<p>Le modèle MarocExplore final peut être utilisé de deux façons distinctes selon vos besoins : l’<strong>évaluation</strong> sur un dataset existant avec des coordonnées de référence, ou la <strong>prédiction</strong> de localisation pour une image individuelle. Ces deux modes d’utilisation permettent respectivement de mesurer les performances du modèle et d’exploiter ses capacités de géolocalisation en production.</p>
+<div class="attention admonition">
+<p class="admonition-title">Attention</p>
+<p><strong>Prérequis techniques</strong></p>
+<ul class="simple">
+<li><p>Python 3.8+</p></li>
+<li><p>PyTorch 1.12+</p></li>
+<li><p>timm 0.6+</p></li>
+<li><p>pandas, numpy, PIL</p></li>
+<li><p>CUDA recommandé pour l’inférence rapide</p></li>
+</ul>
+</div>
+<section id="prerequis-communs">
+<h2>Prérequis Communs<a class="headerlink" href="#prerequis-communs" title="Link to this heading"></a></h2>
+<p>Avant d’utiliser le modèle, vous devez :</p>
+<ol class="arabic">
+<li><p><strong>Télécharger le modèle pré-entraîné</strong></p>
+<ul class="simple">
+<li><p>Depuis Google Drive : <a class="reference external" href="https://drive.google.com/drive/folders/1jGl0Un0FehxftKpgI8i775mmQbTB11M2?usp=drive_link">https://drive.google.com/drive/folders/1jGl0Un0FehxftKpgI8i775mmQbTB11M2?usp=drive_link</a></p></li>
+<li><p>Ou depuis le repository GitHub : <a class="reference external" href="https://github.com/amineEssahraoui/MaroxExplorer">https://github.com/amineEssahraoui/MaroxExplorer</a></p></li>
+</ul>
+</li>
+<li><p><strong>Obtenir le fichier de métadonnées</strong> (obligatoire)</p>
+<p>Le fichier <code class="docutils literal notranslate"><span class="pre">data_red/Métadonnées_villes.csv</span></code> contenant les caractéristiques des villes est disponible dans le repository GitHub.</p>
+</li>
+</ol>
+</section>
+<section id="mode-1-evaluation">
+<h2>Mode 1 : Évaluation<a class="headerlink" href="#mode-1-evaluation" title="Link to this heading"></a></h2>
+<p>Ce mode permet d’évaluer les performances du modèle sur un dataset avec des coordonnées de référence connues.</p>
+<p><strong>Prérequis spécifiques :</strong></p>
+<ul class="simple">
+<li><p>Un dossier contenant des images avec des identifiants et les villes qui correspondants</p></li>
+<li><p>Un fichier CSV contenant les coordonnées réelles de ces images</p></li>
+<li><p>Le fichier de métadonnées des villes</p></li>
+</ul>
+<p><strong>Utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Charger le modèle et évaluer sur un dataset</span>
+ <span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/model/MarocExplorer_model.pth&quot;</span>  <span class="c1"># Path du modèle , Remplace par ton chemin</span>
+ <span class="n">csv_path</span> <span class="o">=</span> <span class="s2">&quot;/content/maroc_data_finale.csv&quot;</span> <span class="c1"># Pour les cordonnées</span>
+ <span class="n">city_features_path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/Datasets/data_red/M_villes_avec_coords.csv&quot;</span> <span class="c1"># Métadonnées</span>
+ <span class="n">images_folder</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/Datasets/data_red/iamges_red&#39;</span> <span class="c1"># Images</span>
+
+ <span class="n">evaluate_model_on_images</span><span class="p">(</span>
+     <span class="n">model_path</span><span class="o">=</span><span class="n">model_path</span><span class="p">,</span>
+     <span class="n">csv_path</span><span class="o">=</span><span class="n">csv_path</span><span class="p">,</span>
+     <span class="n">city_features_path</span><span class="o">=</span><span class="n">city_features_path</span><span class="p">,</span>
+     <span class="n">images_folder</span><span class="o">=</span><span class="n">images_folder</span><span class="p">,</span>
+     <span class="n">n_images</span><span class="o">=</span><span class="mi">10</span>  <span class="c1"># Tu peux changer ce nombre</span>
+ <span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Sorties :</strong></p>
+<ul class="simple">
+<li><p>Les prédictions</p></li>
+<li><p>Distance entre prédictions et coordonnées réelles</p></li>
+</ul>
+</section>
+<section id="mode-2-prediction-pour-une-image">
+<h2>Mode 2 : Prédiction pour une Image<a class="headerlink" href="#mode-2-prediction-pour-une-image" title="Link to this heading"></a></h2>
+<p>Ce mode permet de prédire la localisation d’une image individuelle.</p>
+<p><strong>Prérequis spécifiques :</strong></p>
+<ul class="simple">
+<li><p>Une image à géolocaliser</p></li>
+<li><p>Sélection de la ville depuis la liste disponible dans le notebook</p></li>
+</ul>
+<p><strong>Utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MODEL_PATH</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/model/MarocExplorer_model.pth&quot;</span>
+<span class="n">CITY_FEATURES_PATH</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/Datasets/data_red/M_villes_avec_coords.csv&quot;</span>
+
+<span class="n">IMAGE_PATH</span> <span class="o">=</span> <span class="s2">&quot;/content/tour-hassan-rabat-morocco-by-migel.jpeg&quot;</span>  <span class="c1"># Remplacer par votre chemin</span>
+<span class="n">CITY_NAME</span> <span class="o">=</span> <span class="s2">&quot;Rabat&quot;</span>  <span class="c1"># Nom de ville supportée</span>
+
+<span class="c1"># Utiliser une des deux fonctions selon le besoin :</span>
+<span class="c1"># Résultat simple :</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">predict_single_image</span><span class="p">(</span>
+    <span class="n">image_path</span><span class="o">=</span><span class="n">IMAGE_PATH</span><span class="p">,</span>
+    <span class="n">city_name</span><span class="o">=</span><span class="n">CITY_NAME</span><span class="p">,</span>
+    <span class="n">model_path</span><span class="o">=</span><span class="n">MODEL_PATH</span><span class="p">,</span>
+    <span class="n">city_features_path</span><span class="o">=</span><span class="n">CITY_FEATURES_PATH</span>
+<span class="p">)</span>
+
+<span class="c1"># Résultat avec visualisation :</span>
+<span class="c1"># results = predict_and_visualize(</span>
+<span class="c1">#     image_path=IMAGE_PATH,</span>
+<span class="c1">#     city_name=CITY_NAME,</span>
+<span class="c1">#     model_path=MODEL_PATH,</span>
+<span class="c1">#     city_features_path=CITY_FEATURES_PATH</span>
+<span class="c1"># )</span>
+</pre></div>
+</div>
+<p><strong>Sorties :</strong></p>
+<ul class="simple">
+<li><p>Coordonnées GPS prédites (latitude, longitude)</p></li>
+<li><p>Distance entre la prédiction et le centre de ville</p></li>
+<li><p>Visualisation optionnelle de l’image</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>La liste des villes disponibles est définie dans le notebook principal. Assurez-vous de sélectionner une ville présente dans le fichier de métadonnées pour obtenir des prédictions fiables.</p>
+</div>
+<div class="attention admonition">
+<p class="admonition-title">Attention</p>
+<p><strong>Cellules à Exécuter Obligatoirement</strong></p>
+<p>Pour utiliser la prédiction d’une image, vous devez obligatoirement exécuter les cellules suivantes dans le notebook :</p>
+<ol class="arabic simple">
+<li><p><strong>Cellule d’importation des bibliothèques</strong> - Contient tous les imports nécessaires</p></li>
+<li><p><strong>Cellule de la fonction</strong> <code class="docutils literal notranslate"><span class="pre">load_model(model_path)</span></code> - Charge le modèle pré-entraîné</p></li>
+<li><p><strong>Cellule de la fonction</strong> <code class="docutils literal notranslate"><span class="pre">prepare_city_features(city_features_path)</span></code> - Prépare les caractéristiques des villes</p></li>
+<li><p><strong>Cellule de la fonction</strong> <code class="docutils literal notranslate"><span class="pre">haversine_distance(lat1,</span> <span class="pre">lon1,</span> <span class="pre">lat2,</span> <span class="pre">lon2)</span></code> - Calcule la distance entre coordonnées GPS</p></li>
+</ol>
+<p>Ces cellules doivent être exécutées dans l’ordre avant toute tentative de prédiction.</p>
+</div>
+<p>Consultez notre <strong>notebook Colab</strong> :</p>
+<a href="https://colab.research.google.com/drive/1Eepqzt34FIDokAWNGlNAyGWUfQMjIWuW#scrollTo=t9PPRKtYU3YN" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Optimisation.html" class="btn btn-neutral float-left" title="Optimisation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Amine Essahraoui.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
